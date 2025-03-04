@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $stmt->close();
         unset($_SESSION['answers_deleted']); // Reset the session variable
-        header("Location: result.php?case_id=$case_id");
+        header("Location: case_summary.php?case_id=$case_id");
         exit();
     } elseif ($current_step + 1 < count($questions)) {
         header("Location: double_tax_treaty.php?case_id=$case_id");
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $stmt->close();
         unset($_SESSION['answers_deleted']); // Reset the session variable
-        header("Location: result.php?case_id=$case_id");
+        header("Location: case_summary.php?case_id=$case_id");
         exit();
     }
 }
